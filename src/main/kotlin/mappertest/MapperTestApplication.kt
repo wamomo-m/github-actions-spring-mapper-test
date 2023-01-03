@@ -7,5 +7,5 @@ import org.springframework.boot.runApplication
 class MapperTestApplication
 
 fun main(args: Array<String>) {
-	runApplication<MapperTestApplication>(*args)
+    runApplication<MapperTestApplication>(*args)
 }

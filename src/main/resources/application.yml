@@ -1,0 +1,8 @@
+spring:
+  datasource:
+    driver-class-name:
+    url: jdbc:mysql://localhost:3306/mapper_test
+    username: root
+    password: mysql
+
+server.port: 8080
