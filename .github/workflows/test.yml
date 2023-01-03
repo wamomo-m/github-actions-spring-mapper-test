@@ -1,4 +1,4 @@
-name: gradle test
+name: gradle test task
 
 on:
   push:
@@ -12,6 +12,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
+      - name: Up docker-compose
+        run: docker-compose up -d
+
       - name: Set up jdk
         uses: actions/setup-java@v3
         with:
@@ -21,12 +24,5 @@ jobs:
       - name: Set up gradle
         uses: gradle/gradle-build-action@v2
 
-      - name: Up docker container
-        run: ./gradlew dockerComposeUp
-
       - name: Run test
         run: ./gradlew test
-
-      - name: Down docker container
-        if: always()
-        run: ./gradlew dockerComposeDown
