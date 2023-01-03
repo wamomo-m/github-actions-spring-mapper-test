@@ -9,24 +9,24 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: checkout
+      - name: Checkout
         uses: actions/checkout@v3
 
-      - name: set up jdk
+      - name: Set up jdk
         uses: actions/setup-java@v3
         with:
           java-version: 17
           distribution: temurin
 
-      - name: set up gradle
+      - name: Set up gradle
         uses: gradle/gradle-build-action@v2
 
-      - name: up docker container
+      - name: Up docker container
         run: ./gradlew dockerComposeUp
 
-      - name: run test
+      - name: Run test
         run: ./gradlew test
 
-      - name: down docker container
+      - name: Down docker container
         if: always()
         run: ./gradlew dockerComposeDown
