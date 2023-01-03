@@ -5,7 +5,6 @@ plugins {
     id("io.spring.dependency-management") version "1.1.0"
     id("org.jlleitschuh.gradle.ktlint") version "11.0.0"
     id("org.flywaydb.flyway") version "9.8.1"
-    id("com.palantir.docker-compose") version "0.34.0"
     kotlin("jvm") version "1.7.22"
     kotlin("plugin.spring") version "1.7.22"
 }
@@ -44,10 +43,6 @@ tasks.withType<KotlinCompile> {
 tasks.withType<Test> {
     useJUnitPlatform()
     dependsOn(tasks.flywayMigrate)
-}
-
-dockerCompose {
-    setDockerComposeFile("./docker-compose.yml")
 }
 
 flyway {
