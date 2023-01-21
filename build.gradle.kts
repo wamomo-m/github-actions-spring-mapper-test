@@ -51,6 +51,6 @@ flyway {
     user = "root"
     password = "mysql"
     locations = arrayOf("filesystem:sql")
-    baselineVersion = "1.0.0"
+    baselineVersion = "0.0.0"
     baselineOnMigrate = true
 }
